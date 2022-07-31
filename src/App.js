@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+
+import { BrowserRouter } from 'react-router-dom';
+
+import { createContext } from "react";
 import './App.css';
+import Footer from './Components/Footer';
+
+import Navbar from './Components/Navbar';
+const getTodo=()=>{
+  let todo=JSON.parse(localStorage.getItem("mytodo"));
+  return todo
+}
+export const MyTodo=createContext();
+
+
 
 function App() {
   return (
+    <BrowserRouter>
+    <MyTodo.Provider value={getTodo()}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>To do</h1>
+    <Navbar/>
+    
+    <Footer/>
     </div>
+    </MyTodo.Provider>
+    </BrowserRouter>
   );
 }
 
