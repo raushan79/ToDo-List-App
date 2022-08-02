@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import CompleteTodo from './CompleteTodo';
-import CreateTodo from './CreateTodo';
+import TodoInput from './TodoInput';
 import Home from './Home';
 import PendingTodo from './PendingTodo';
 
@@ -18,7 +18,7 @@ function Navbar() {
        <Routes>
            <Route path={'/'} element={<Home/>}></Route>
            <Route path={'/completetodo'} element={<CompleteTodo/>}></Route>
-           <Route path={'/addtodo'} element={<CreateTodo/>}></Route>
+           <Route path={'/addtodo'} element={<TodoInput/>}></Route>
            <Route path={'/pendingtodo'} element={<PendingTodo/>}></Route>
 
        </Routes>
