@@ -1,17 +1,15 @@
-import React, {  useEffect, useState } from 'react'
+import React, {   useState } from 'react'
 import TodoList from './TodoList';
+
+// http://localhost:8080/todos
 
 
 function Home() {
  
-  const [todos,setTodos]=useState([]);
-  const getTodo=()=>{
-    let mytodo=JSON.parse(localStorage.getItem("mytodo"));
-    setTodos( mytodo);
-  }
+  const [todos,setTodos]=useState(JSON.parse(localStorage.getItem("mytodo")));
+ 
   
 
- useEffect(getTodo(),[]);
 
   return (
     <div>

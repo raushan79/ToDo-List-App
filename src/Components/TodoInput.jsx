@@ -11,7 +11,7 @@ function TodoInput() {
       title,
       description,
       status:false,
-      timeStamp : new Date(),
+      timeStamp : new Date().toDateString(),
 
     }
     console.log(payload);

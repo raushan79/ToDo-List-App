@@ -1,10 +1,12 @@
 import React from 'react'
 
-function TodoItem({props}) {
-    const [title,description,status,timeStamp]=props;
+function TodoItem({todo}) {
+  const {title,description,status,timeStamp}=todo;
+  
   return (
     <div>
-        <p>{title}</p><p>{timeStamp}</p>
+      {/* <p> {title}  </p> */}
+        <span>{title}</span>{"--"}<span>{timeStamp}</span>
         <p>{description}</p>
         <p>{status?"completed":"pending"}</p>
       

@@ -1,30 +1,37 @@
 
 import { BrowserRouter } from 'react-router-dom';
-
-import { createContext } from "react";
 import './App.css';
 import Footer from './Components/Footer';
+import TodoList from './Components/TodoList';
 
-import Navbar from './Components/Navbar';
-const getTodo=()=>{
-  let todo=JSON.parse(localStorage.getItem("mytodo"));
-  return todo
-}
-export const MyTodo=createContext();
+// export const todos=createContext(());
+
+
+
+
+
+const todos=[{
+  title:"eat",
+  description: "10 o clock",
+  status:false,
+  timeStamp:new Date().toDateString(),
+}]
+
 
 
 
 function App() {
   return (
     <BrowserRouter>
-    <MyTodo.Provider value={getTodo()}>
+    
     <div className="App">
     <h1>To do</h1>
-    <Navbar/>
+    <TodoList todos={todos}/>
+ 
     
     <Footer/>
     </div>
-    </MyTodo.Provider>
+  
     </BrowserRouter>
   );
 }
